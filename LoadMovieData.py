@@ -18,7 +18,7 @@
 #########################################################################################
 
 import os, sys, time, decimal
-from decimal import# 
+from decimal import *
 import boto3
 import json
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
@@ -30,7 +30,7 @@ def loadfile(infile):
     for movie in jsonobj:
         lc += 1
         CreateTime = int(time.time())
-        ExpireTime = CreateTime + (1#  60#  60)
+        ExpireTime = CreateTime + (1* 60* 60)
         response = table.put_item(
            Item={
                 'Year': decimal.Decimal(movie['year']),
