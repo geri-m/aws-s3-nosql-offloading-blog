@@ -30,7 +30,7 @@ def loadfile(infile):
     for movie in jsonobj:
         lc += 1
         CreateTime = int(time.time())
-        ExpireTime = CreateTime + (1* 60* 60)
+        ExpireTime = CreateTime + (1 * 60 * 60)
         response = table.put_item(
            Item={
                 'Year': decimal.Decimal(movie['year']),
